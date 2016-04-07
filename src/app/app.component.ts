@@ -5,8 +5,8 @@ import {GenericComponent} from './generic.component';
     selector: 'app',
     directives:[GenericComponent],
     template: `
-        <generic-component component-name="icici-heading"></generic-component>
-        <generic-component component-name="icici-body"></generic-component>
+        <generic-component component-name="heading"></generic-component>
+        <generic-component component-name="body"></generic-component>
     `
 })
 
