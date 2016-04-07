@@ -1,7 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 
 @Component({
-    selector: 'icici-body',
+    selector: 'body',
     templateUrl: 'http://localhost:3000/src/app/app.component.html'
     })
 
