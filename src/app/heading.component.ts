@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from 'angular2/core';
 
 @Component({
-    selector: 'icici-heading',
+    selector: 'heading',
     template: '<div>Heading</div>'
 })
 
