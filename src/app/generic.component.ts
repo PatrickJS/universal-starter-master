@@ -16,7 +16,7 @@ export class GenericComponent {
     currentComponent: string = 'Generic';
 
     typesRegister: Type[] = [bodyComponent, headingComponent];
-    keysRegister: string[] = ['icici-body','icici-heading'];
+    keysRegister: string[] = ['body','heading'];
 
     constructor(private dcl: DynamicComponentLoader, private elementRef: ElementRef) { }
 
