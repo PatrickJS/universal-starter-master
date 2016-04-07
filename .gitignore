@@ -1,0 +1,17 @@
+.svn
+.idea
+*.iml
+.classpath
+.project
+.settings
+.tmp
+.merge_file*
+.sass-cache
+.DS_Store
+.gradle
+vim.exe.stackdump
+.vscode
+/nbproject
+/target
+/build
+/dist
