@@ -1,5 +1,5 @@
-import 'angular2-universal-preview/polyfills';
-import {prebootComplete} from 'angular2-universal-preview';
+import 'angular2-universal/polyfills';
+import {prebootComplete} from 'angular2-universal';
 
 import {bootstrap} from 'angular2/platform/browser';
 import {HTTP_PROVIDERS} from 'angular2/http';
@@ -9,7 +9,7 @@ import {App} from './app/app.component';
 
 enableProdMode();
 
-bootstrap(App, [  
+bootstrap(App, [
   ...HTTP_PROVIDERS
 ])
 .then(prebootComplete);

@@ -2,13 +2,15 @@ import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 // Angular 2
-import 'angular2-universal-preview/polyfills';
+import 'angular2-universal/polyfills';
 import {
   expressEngine,
+  BASE_URL,
+  ORIGIN_URL,
   REQUEST_URL,
   NODE_ROUTER_PROVIDERS,
   NODE_HTTP_PROVIDERS
-} from 'angular2-universal-preview';
+} from 'angular2-universal';
 
 import {provide, enableProdMode} from 'angular2/core';
 import {APP_BASE_HREF} from 'angular2/router';
@@ -34,16 +36,18 @@ function ngApp(req, res) {
   let url = req.originalUrl || '/';
   res.render('index', {
     directives: [ App ],
+    platformProviders: [
+      provide(ORIGIN_URL, {useValue: 'http://localhost:3000'}),
+      provide(BASE_URL, {useValue: baseUrl}),
+    ],
     providers: [
-      provide(APP_BASE_HREF, {useValue: baseUrl}),
       provide(REQUEST_URL, {useValue: url}),
       NODE_ROUTER_PROVIDERS,
       NODE_HTTP_PROVIDERS,
     ],
     async: true,
-    preboot: true // { appRoot: 'app' } // your top level app component selector
-  },function(err, content){
-  console.log(content);
+    preboot: false // { appRoot: 'app' } // your top level app component selector
+  }, function(err, content){
   res.send(content);
   });
 }
